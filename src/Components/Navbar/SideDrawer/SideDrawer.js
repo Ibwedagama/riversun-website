@@ -31,7 +31,7 @@ function SideDrawer(props) {
           </NavItems>
         </li>
         <li>
-          <PrimaryButton label='Lets Talk' primary={false} link='/' />
+          <PrimaryButton label='Lets Talk' secondary={true} link='/' />
         </li>
       </ul>
     </div>
