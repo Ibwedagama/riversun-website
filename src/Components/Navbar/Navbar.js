@@ -6,21 +6,23 @@ import NavItems from '../Navbar/NavItems/NavItems'
 import MenuIcon from '@material-ui/icons/Menu'
 
 class Navbar extends Component {
-  
-  componentDidMount(){
-    window.addEventListener("scroll", this.handleScroll)
+  state = {
+    NavbarScroll: true,
   }
-  componentWillUnmount(){
-    window.addEventListener("scroll", this.handleScroll)
+  componentDidMount() {
+    document.addEventListener('scroll', this.handleScroll)
+  }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll)
   }
   handleScroll = () => {
     if (window.scrollY > 20) {
-      document.querySelector(".Navbar").className = 'Navbar Scroll';
+      document.querySelector('.Navbar').className = 'Navbar Scroll'
     } else {
-      document.querySelector(".Navbar").className = 'Navbar';
+      document.querySelector('.Navbar').className = 'Navbar'
     }
   }
-  render(){
+  render() {
     return (
       <nav className='Navbar'>
         <Logo className='Logo' />
@@ -45,8 +47,7 @@ class Navbar extends Component {
         </div>
       </nav>
     )
-    }
-  
+  }
 }
 
 export default Navbar
