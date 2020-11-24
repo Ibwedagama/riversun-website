@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Footer.module.css'
 import Button from '../Buttons/PrimaryButton'
 import InstagramIcon from '@material-ui/icons/Instagram'
+import { NavLink } from 'react-router-dom'
 
 function Footer(props) {
   return (
@@ -15,16 +16,24 @@ function Footer(props) {
         <Button label='LETS TALK' icon={true} primary={true} />
         <div className={classes.SocialLink}>
           <div className={classes.SocialItems}>
-            <InstagramIcon></InstagramIcon>
+            <NavLink to='/' exact={true}>
+              <InstagramIcon />
+            </NavLink>
           </div>
           <div className={classes.SocialItems}>
-            <InstagramIcon></InstagramIcon>
+                  <NavLink to='/' exact={true}>
+              <InstagramIcon />
+            </NavLink>
           </div>
           <div className={classes.SocialItems}>
-            <InstagramIcon></InstagramIcon>
+            <NavLink to='/' exact={true}>
+              <InstagramIcon />
+            </NavLink>
           </div>
           <div className={classes.SocialItems}>
-            <InstagramIcon></InstagramIcon>
+            <NavLink to='/' exact={true}>
+              <InstagramIcon />
+            </NavLink>
           </div>
         </div>
       </section>

@@ -32,3 +32,12 @@
     justify-content: flex-end;
     cursor: pointer;
 }
+
+@media(max-width: 768px){
+    .Items{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

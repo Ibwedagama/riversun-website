@@ -7,11 +7,11 @@ function NavItems(props) {
     activeClass = 'SecondaryActive'
   }
   return (
-    <li className='NavItems'>
+    <div className='NavItems'>
       <NavLink to={props.link} exact={true} activeClassName={activeClass}>
         {props.children}
       </NavLink>
-    </li>
+    </div>
   )
 }
 export default NavItems

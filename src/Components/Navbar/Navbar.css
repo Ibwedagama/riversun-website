@@ -12,10 +12,13 @@
     z-index: 200;
     padding: 0 150px;
     margin: 0;
+    transition: 0.3s ease-in-out;
 }
 
 .Scroll{
+    transition: 0.3s ease-in-out;
     background: #ffffff;
+    filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.08));
 }
 
 .Logo{
