@@ -1,0 +1,30 @@
+.Hero {
+    margin: 0;
+    padding: 0 150px;
+    background: #FFD600;
+    width: 100%;
+}
+
+.MainSection{
+    margin: 0;
+    padding: 0 150px;
+    background: #ffffff;
+    width: 100%;
+}
+@media (max-width: 1024px){
+    .Hero, .MainSection{
+        padding: 0 73px;
+    }
+}
+
+@media (max-width: 768px){
+    .Hero, .MainSection{
+        padding: 0 33px;
+    }
+}
+
+@media (max-width: 425px){
+    .Hero, .MainSection{
+        padding: 0 33px;
+    }
+}

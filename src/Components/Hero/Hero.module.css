@@ -1,0 +1,141 @@
+
+.Content{
+    position: relative;
+    height: 100vh;
+    padding-top: 92px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "left right" ;
+    align-content: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.Left{
+    position: relative;
+    z-index: 1;
+    grid-area: left;
+    padding-right: 20px;
+}
+
+.Right{
+    grid-area: right
+}
+
+.Circle{
+    position: absolute;
+    z-index: -1;
+    top: -50px;
+    left: -30px;
+}
+
+
+.MainHeader{
+    font-family: Raleway;
+    z-index: 2;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4.768rem;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #111517;
+}
+
+.MainHeader::before{
+    content: '';
+    display: block;
+    width: 128px;
+    height: 128px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: -37px;
+    left: -27px;
+    z-index: -1;
+}
+
+
+.Subtitle{
+    margin-top: 38px;
+    margin-bottom: 52px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 180%;
+    color: #555555;
+}
+
+.Illustration{
+    position: relative;
+    right: -86px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .Content{
+        position: relative;
+        height: 100%;
+        padding-top : 199px;
+        padding-bottom: 148px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "left right" ;
+        align-content: center;
+        justify-items: center;
+        width: 100%;
+    }
+    .Illustration{
+       right: 0;
+    }
+    .MainHeader{
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+   .Content{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "right" "left";
+    height: 100%;
+    align-content: center;
+    justify-items: center;
+    padding-top : 199px;
+    padding-bottom: 148px;
+   }
+   .Illustration{
+       padding: 0 12.5%;
+   }
+   .MainHeader{
+       padding: 0 12.5% !important;
+       margin-top: 48px;
+   }
+   .MainHeader, .Subtitle, .Left{
+       text-align: center;
+       padding-right: 0;
+   }
+   .MainHeader::before{
+       display: none;
+   }
+   .Subtitle{
+       padding: 0 12.5% !important;
+   }
+  }
+  
+  @media (max-width : 425px){
+    .Content{
+        padding-top : 137px;
+        padding-bottom: 116px;
+    }
+    .Illustration{
+        display: none;
+      }
+    .MainHeader{
+     font-size: 48px;
+     padding: 0 !important;
+    }
+    .Subtitle{
+        padding: 0 !important;
+    }
+}

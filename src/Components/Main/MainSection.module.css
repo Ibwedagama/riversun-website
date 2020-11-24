@@ -1,0 +1,171 @@
+.TwoColumn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: baseline;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin: 150px 0;
+}
+
+.OneColumn{
+    display: grid;
+    grid-template-areas: "title" 
+                        "subtitle";
+    grid-gap: 24px;
+    justify-items: baseline;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.ServiceCard{
+    margin-top: 60px;
+    grid-area: service;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin-bottom: 60px;
+    justify-items: center;
+    align-items: center;
+}
+
+.Title{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 90px;
+    color: #111517;
+    grid-area: "title";
+}
+
+.Subtitle{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 200%;
+    color: #777777;
+    grid-area: "subtitle";
+}
+
+.Numbering{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 120px;
+    line-height: 90px;
+    color: #EEEEEE;
+    display: block;
+    position: relative;
+    top: 50px;
+    left: -50px;
+    z-index: -1;
+}
+
+.OverlayCard{
+    grid-area: "card";
+}
+
+.Process{
+    margin-top: 62px;
+    display: grid;
+    grid-row-gap: 65px;
+    grid-column-gap: 110px;
+    grid-template-areas: "research design" "development testing";
+    grid-template-columns: 1fr 1fr;
+    justify-items: baseline;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 164px;
+}
+
+.Process img{
+    width: auto;
+    max-height: 181px;
+}
+
+.Projects{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 28px;
+}
+
+.ProjectCTA{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 64px 0;
+    margin-bottom: 168px;
+}
+
+@media (max-width: 1024px){
+    .TwoColumn{
+        margin: 100px 0 ;
+    }
+    .Title{
+        font-size: 58px;
+        line-height: 120%;
+    }
+    .Numbering{
+        font-size: 72px;
+    }
+}
+
+@media (max-width: 768px){
+   .Title{
+        font-size: 52px;
+   }
+   .Numbering{
+    display: none;
+}
+   .ServiceCard{
+        grid-gap: 20px;
+   }
+}
+
+@media (max-width: 425px){
+    .TwoColumn{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin: 100px 0 ;
+    }
+    .OneColumn{
+        justify-items: center;
+    }
+    .Title{
+        text-align: center !important;
+        font-size: 36px;
+   }
+   .Subtitle{
+       text-align: center;
+   }
+   .Numbering{
+        display: none;
+   }
+
+   .Process{
+       padding: 0 15px;
+   }
+
+   .Process p{
+       display: none;
+   }
+
+   .Process img{
+       width: 100px;
+       height: auto;
+   }
+   .ServiceCard{
+    grid-template-columns: 1fr;
+    grid-gap: 49px;
+    margin-bottom: 120px;
+    }
+    .Projects{
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+    }
+}

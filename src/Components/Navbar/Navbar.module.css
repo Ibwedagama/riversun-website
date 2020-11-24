@@ -1,0 +1,72 @@
+.Navbar{
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 92px;
+    background: #FFD600;
+    z-index: 200;
+    padding: 0 150px;
+    margin: 0;
+}
+
+.Scroll{
+    background: #ffffff;
+}
+
+.Logo{
+    max-width: 155px;
+}
+
+.NavItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ToggleButton{
+    cursor: pointer;
+}
+
+@media (min-width: 769px){
+    .ToggleButton{
+        display: none;
+    }
+}
+
+@media (max-width: 1024px){
+    .Navbar{
+        grid-template-columns: 40% 40% 20%;
+        padding: 0 73px;
+    }
+}
+
+@media (max-width: 768px){
+    .Navbar{
+        padding: 0 33px;
+        display: flex;
+        justify-content:space-between ;
+    }
+    .NavItems, .Button{
+        display: none;
+    }
+}
+
+@media (max-width: 425px){
+    .Navbar{
+        height: 70px;
+    }
+    img{
+        max-width: 81px;
+    }
+}
