@@ -7,7 +7,7 @@ function NavItems(props) {
       <NavLink to={props.link} exact={true} activeClassName={classes.IsActive}>
         {props.children}
       </NavLink>
-    </div>
+    </li>
   )
   if (props.secondary) {
     linkItems = (

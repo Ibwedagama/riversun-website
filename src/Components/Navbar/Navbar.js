@@ -6,9 +6,6 @@ import NavItems from '../Navbar/NavItems/NavItems'
 import MenuIcon from '@material-ui/icons/Menu'
 
 class Navbar extends Component {
-  state = {
-    NavbarScroll: true,
-  }
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
   }
