@@ -5,10 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import SideDrawer from './Components/Navbar/SideDrawer/SideDrawer'
 import Footer from './Components/Footer/Footer'
+import MainForm from './Components/MainForm/MainForm'
+import Modal from 'react-modal'
 
 class App extends Component {
   state={
     SideDrawerOpen : false,
+    MainFormOpen : false
   }
 
   SideDrawerToggleHandler = () => {
@@ -19,13 +22,28 @@ class App extends Component {
   CloseDrawerHandler = () => {
     this.setState({SideDrawerOpen : false})
   }
+
+  MainFormToggleHandler = () => {
+    this.setState(prevState => ({
+      MainFormOpen : !prevState.MainFormOpen
+    }))
+  }
+  CloseMainFormHandler = () => {
+    this.setState({MainFormOpen: false})
+  }
  
   render() {
     return (
       <Router>
-          <div className='App'>
-            <Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} />
-            <SideDrawer show={this.state.SideDrawerOpen} CloseHandler={this.CloseDrawerHandler}/>
+        <div className='App'>
+          <Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} />
+          <SideDrawer
+            show={this.state.SideDrawerOpen}
+            CloseHandler={this.CloseDrawerHandler}
+          />
+          <Modal>
+            
+          </Modal>
           <Switch>
             <Route path='/blog' exact component={Home} />
             <Route path='/portfolio' exact component={Home} />
@@ -33,7 +51,9 @@ class App extends Component {
           </Switch>
 
           <Footer></Footer>
-          </div>
+          {/* <MainForm></MainForm> */}
+          
+        </div>
       </Router>
     )
   }
