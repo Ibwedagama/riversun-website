@@ -37,49 +37,50 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className='App'>
-          <Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} ToggleModal={this.MainFormToggleHandler} />
-          <SideDrawer
-            show={this.state.SideDrawerOpen}
-            CloseHandler={this.CloseDrawerHandler}
-            showModal={this.MainFormToggleHandler}
-          />
-          <Modal 
-          isOpen={this.state.MainFormOpen}
-          onRequestClose={this.MainFormToggleHandler}
-          closeTimeoutMS={500}
-          style={{
-            overlay: {
-              position: 'fixed',
-              display: 'flex',
-              justifyContent: 'center',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-              zIndex: 9999,
-            },
-            content: {
-              position: 'relative',
-              borderRadius: 'none',
-              inset: 'auto',
-              padding: 0,
-            }
-          }}>
-            <MainForm closeModal={this.MainFormToggleHandler}></MainForm>
-          </Modal>
-          <Switch>
-            <Route path='/blog' exact component={Home} />
-            <Route path='/portfolio' exact component={Home} />
-            <Route path='/' exact component={Home} />
-          </Switch>
+			<Router>
+				<div className='App'>
+					<Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} ToggleModal={this.MainFormToggleHandler} />
+					<SideDrawer
+						show={this.state.SideDrawerOpen}
+						CloseHandler={this.CloseDrawerHandler}
+						showModal={this.MainFormToggleHandler}
+					/>
+					<Modal
+						isOpen={this.state.MainFormOpen}
+						onRequestClose={this.MainFormToggleHandler}
+						closeTimeoutMS={500}
+						style={{
+							overlay: {
+								position: 'fixed',
+								display: 'flex',
+								justifyContent: 'center',
+								top: 0,
+								left: 0,
+								right: 0,
+								bottom: 0,
+								backgroundColor: 'rgba(0, 0, 0, 0.6)',
+								zIndex: 9999,
+							},
+							content: {
+								position: 'relative',
+								borderRadius: 'none',
+								inset: 'auto',
+								padding: 0,
+							},
+						}}
+					>
+						<MainForm closeModal={this.MainFormToggleHandler}></MainForm>
+					</Modal>
+					<Switch>
+						<Route path='/blog' exact component={Home} />
+						<Route path='/portfolio' exact component={Home} />
+						<Route path='/' exact component={Home} />
+					</Switch>
 
-          <Footer></Footer>
-        </div>
-      </Router>
-    )
+					<Footer showModal={this.MainFormToggleHandler}></Footer>
+				</div>
+			</Router>
+		)
   }
 }
 
