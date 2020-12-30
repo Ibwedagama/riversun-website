@@ -8,41 +8,67 @@ import Footer from './Components/Footer/Footer'
 import MainForm from './Components/MainForm/MainForm'
 import Modal from 'react-modal'
 
+Modal.setAppElement('#root')
+
 class App extends Component {
-  state={
-    SideDrawerOpen : false,
-    MainFormOpen : false
+  state = {
+    SideDrawerOpen: false,
+    MainFormOpen: false,
   }
 
   SideDrawerToggleHandler = () => {
-    this.setState(prevState => ({
-      SideDrawerOpen : !prevState.SideDrawerOpen
+    this.setState((prevState) => ({
+      SideDrawerOpen: !prevState.SideDrawerOpen,
     }))
   }
   CloseDrawerHandler = () => {
-    this.setState({SideDrawerOpen : false})
+    this.setState({ SideDrawerOpen: false })
   }
 
   MainFormToggleHandler = () => {
-    this.setState(prevState => ({
-      MainFormOpen : !prevState.MainFormOpen
+    this.setState((prevState) => ({
+      MainFormOpen: !prevState.MainFormOpen,
     }))
+    this.setState({ SideDrawerOpen: false })
   }
   CloseMainFormHandler = () => {
-    this.setState({MainFormOpen: false})
+    this.setState({ MainFormOpen: false })
   }
- 
+
   render() {
     return (
       <Router>
         <div className='App'>
-          <Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} />
+          <Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} ToggleModal={this.MainFormToggleHandler} />
           <SideDrawer
             show={this.state.SideDrawerOpen}
             CloseHandler={this.CloseDrawerHandler}
+            showModal={this.MainFormToggleHandler}
           />
-          <Modal>
-            
+          <Modal 
+          isOpen={this.state.MainFormOpen}
+          onRequestClose={this.MainFormToggleHandler}
+          closeTimeoutMS={500}
+          style={{
+            overlay: {
+              position: 'fixed',
+              display: 'flex',
+              justifyContent: 'center',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              zIndex: 9999,
+            },
+            content: {
+              position: 'relative',
+              borderRadius: 'none',
+              inset: 'auto',
+              padding: 0,
+            }
+          }}>
+            <MainForm closeModal={this.MainFormToggleHandler}></MainForm>
           </Modal>
           <Switch>
             <Route path='/blog' exact component={Home} />
@@ -51,8 +77,6 @@ class App extends Component {
           </Switch>
 
           <Footer></Footer>
-          {/* <MainForm></MainForm> */}
-          
         </div>
       </Router>
     )

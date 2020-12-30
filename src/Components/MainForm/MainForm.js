@@ -5,10 +5,10 @@ import CloseIcon from '@material-ui/icons/Close'
 
 const MainForm = (props) => {
   return (
-    <section className={classes.Background}>
+    
       <section className={classes.MainForm}>
         <div className={classes.CloseButton}>
-          <CloseIcon />
+          <CloseIcon onClick={props.closeModal} />
         </div>
         <h1 className={classes.Title}>Lets Talk</h1>
         <p className={classes.Subtitle}>
@@ -65,8 +65,7 @@ const MainForm = (props) => {
           </p>
           <Button secondary={true} label='WHATSAPP US' whatsapp={true} />
         </div>
-      </section>
-    </section>
+        </section>
   )
 }
 

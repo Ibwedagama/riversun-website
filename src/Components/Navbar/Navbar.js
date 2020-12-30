@@ -21,29 +21,29 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className='Navbar'>
-        <Logo className='Logo' />
-        <ul className='NavItems'>
-          <li>
-            <NavItems link='/' active>
-              Home
-            </NavItems>
-          </li>
-          <li>
-            <NavItems link='/portfolio'>Our Works</NavItems>
-          </li>
-          <li>
-            <NavItems link='/blog'>Blog</NavItems>
-          </li>
-        </ul>
-        <section className='Button'>
-          <PrimaryButton label='Lets Talk' secondary={true} link='/' />
-        </section>
-        <div className='ToggleButton' onClick={this.props.ToggleSideDrawer}>
-          <MenuIcon />
-        </div>
-      </nav>
-    )
+			<nav className='Navbar'>
+				<Logo className='Logo' />
+				<ul className='NavItems'>
+					<li>
+						<NavItems link='/' active>
+							Home
+						</NavItems>
+					</li>
+					<li>
+						<NavItems link='/portfolio'>Our Works</NavItems>
+					</li>
+					<li>
+						<NavItems link='/blog'>Blog</NavItems>
+					</li>
+				</ul>
+				<section className='Button'>
+					<PrimaryButton label='Lets Talk' secondary={true} toggle={true} initToggle={this.props.ToggleModal} />
+				</section>
+				<div className='ToggleButton' onClick={this.props.ToggleSideDrawer}>
+					<MenuIcon />
+				</div>
+			</nav>
+		)
   }
 }
 

@@ -10,32 +10,32 @@ function SideDrawer(props) {
     toggleClasses = 'SideDrawer open'
   }
   return (
-    <div className={toggleClasses}>
-      <div className='CloseButton'>
-        <CloseIcon onClick={props.CloseHandler} />
-      </div>
-      <ul className='Items'>
-        <li>
-          <NavItems link='/' active secondary={true}>
-            Home
-          </NavItems>
-        </li>
-        <li>
-          <NavItems link='/portfolio' secondary={true}>
-            Our Works
-          </NavItems>
-        </li>
-        <li>
-          <NavItems link='/blog' secondary={true}>
-            Blog
-          </NavItems>
-        </li>
-        <li>
-          <PrimaryButton label='Lets Talk' secondary={true} link='/' />
-        </li>
-      </ul>
-    </div>
-  )
+		<div className={toggleClasses}>
+			<div className='CloseButton'>
+				<CloseIcon onClick={props.CloseHandler} />
+			</div>
+			<ul className='Items'>
+				<li>
+					<NavItems link='/' active secondary={true}>
+						Home
+					</NavItems>
+				</li>
+				<li>
+					<NavItems link='/portfolio' secondary={true}>
+						Our Works
+					</NavItems>
+				</li>
+				<li>
+					<NavItems link='/blog' secondary={true}>
+						Blog
+					</NavItems>
+				</li>
+				<li>
+					<PrimaryButton label='Lets Talk' secondary={true} toggle={true} initToggle={props.showModal} />
+				</li>
+			</ul>
+		</div>
+	)
 }
 
 export default SideDrawer
