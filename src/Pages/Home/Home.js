@@ -20,20 +20,21 @@ class Home extends Component {
   }
   render() {
     return (
-      <main>
-        <section className='Hero'>
-          <Hero />
-        </section>
-        <section className='MainSection'>
-          <MainSection
-            ShowServiceOne={this.state.ShowServiceOne}
-            ShowServiceTwo={this.state.ShowServiceTwo}
-            ToggleServiceOne={this.ServiceOneToggleHandler}
-            ToggleServiceTwo={this.ServiceTwoToggleHandler}
-          />
-        </section>
-      </main>
-    )
+			<main>
+				<section className='Hero'>
+					<Hero />
+				</section>
+				<section className='Transition' id='MainSection'></section>
+				<section className='MainSection'>
+					<MainSection
+						ShowServiceOne={this.state.ShowServiceOne}
+						ShowServiceTwo={this.state.ShowServiceTwo}
+						ToggleServiceOne={this.ServiceOneToggleHandler}
+						ToggleServiceTwo={this.ServiceTwoToggleHandler}
+					/>
+				</section>
+			</main>
+		)
   }
 }
 
