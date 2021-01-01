@@ -1,39 +1,66 @@
 import React from 'react'
 import classes from './Footer.module.css'
 import Button from '../Buttons/PrimaryButton'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import { NavLink } from 'react-router-dom'
+// import InstagramIcon from '@material-ui/icons/Instagram'
+import InstagramIcon from '../../Assets/icon/ig.webp'
+import BehanceIcon from '../../Assets/icon/behance.webp'
+import DribbbleIcon from '../../Assets/icon/dribbble.webp'
+import LinkedinIcon from '../../Assets/icon/linkedin.webp'
+// import { NavLink } from 'react-router-dom'
 
 function Footer(props) {
-  return (
+	return (
 		<>
 			<section className={classes.Footer}>
 				<h1 className={classes.Title}>So, what do you think?</h1>
 				<h1 className={classes.Subtitle}>
 					We'd love to <span className={classes.Underline}>chat</span> with you.
 				</h1>
-				<h1 className={classes.Title}></h1>
 				<Button label='LETS TALK' icon={true} primary={true} toggle={true} initToggle={props.showModal} />
 				<div className={classes.SocialLink}>
 					<div className={classes.SocialItems}>
-						<NavLink to='/' exact={true}>
-							<InstagramIcon />
-						</NavLink>
+						<a href='https://www.instagram.com/riversunstudio/' exact={true} target='_blank' rel='noopener noreferrer'>
+							<img
+								src={InstagramIcon}
+								alt='Instagram Icon'
+								style={{
+									maxWidth: '20px',
+								}}
+							/>
+						</a>
 					</div>
 					<div className={classes.SocialItems}>
-						<NavLink to='/' exact={true}>
-							<InstagramIcon />
-						</NavLink>
+						<a href='https://dribbble.com/riversunstudio/shots' exact={true} target='_blank' rel='noopener noreferrer'>
+							<img
+								src={DribbbleIcon}
+								alt='Dribbble Icon'
+								style={{
+									maxWidth: '20px',
+								}}
+							/>
+						</a>
 					</div>
 					<div className={classes.SocialItems}>
-						<NavLink to='/' exact={true}>
-							<InstagramIcon />
-						</NavLink>
+						<a href='/' exact={true} target='_blank' rel='noopener noreferrer'>
+							<img
+								src={BehanceIcon}
+								alt='Behance Icon'
+								style={{
+									maxWidth: '22px',
+								}}
+							/>
+						</a>
 					</div>
 					<div className={classes.SocialItems}>
-						<NavLink to='/' exact={true}>
-							<InstagramIcon />
-						</NavLink>
+						<a href='/' exact={true} target='_blank' rel='noopener noreferrer'>
+							<img
+								src={LinkedinIcon}
+								alt='Linkedin Icon'
+								style={{
+									maxWidth: '18px',
+								}}
+							/>
+						</a>
 					</div>
 				</div>
 			</section>

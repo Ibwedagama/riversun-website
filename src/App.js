@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Home from './Pages/Home/Home'
-import './App.css';
+import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import SideDrawer from './Components/Navbar/SideDrawer/SideDrawer'
@@ -11,35 +11,53 @@ import Modal from 'react-modal'
 Modal.setAppElement('#root')
 
 class App extends Component {
-  state = {
-    SideDrawerOpen: false,
-    MainFormOpen: false,
-  }
+	state = {
+		SideDrawerOpen: false,
+		MainFormOpen: false,
+		BodyHeight: null,
+	}
 
-  SideDrawerToggleHandler = () => {
-    this.setState((prevState) => ({
-      SideDrawerOpen: !prevState.SideDrawerOpen,
-    }))
-  }
-  CloseDrawerHandler = () => {
-    this.setState({ SideDrawerOpen: false })
-  }
+	componentDidMount() {
+    this.GetBodyHeight()
+	}
 
-  MainFormToggleHandler = () => {
-    this.setState((prevState) => ({
-      MainFormOpen: !prevState.MainFormOpen,
-    }))
-    this.setState({ SideDrawerOpen: false })
-  }
-  CloseMainFormHandler = () => {
-    this.setState({ MainFormOpen: false })
-  }
+	SideDrawerToggleHandler = () => {
+		this.setState((prevState) => ({
+			SideDrawerOpen: !prevState.SideDrawerOpen,
+		}))
+	}
+	CloseDrawerHandler = () => {
+		this.setState({ SideDrawerOpen: false })
+	}
 
-  render() {
-    return (
+	MainFormToggleHandler = () => {
+		this.setState((prevState) => ({
+			MainFormOpen: !prevState.MainFormOpen,
+		}))
+		this.setState({ SideDrawerOpen: false })
+	}
+	CloseMainFormHandler = () => {
+		this.setState({ MainFormOpen: false })
+	}
+
+	GetBodyHeight = () => {
+		const elem = document.querySelector('#Page')
+		if (elem) {
+			const rect = elem.getBoundingClientRect()
+      this.setState({ BodyHeight: rect.height })
+		}
+	}
+
+	render() {
+		return (
 			<Router>
 				<div className='App'>
-					<Navbar ToggleSideDrawer={this.SideDrawerToggleHandler} ToggleModal={this.MainFormToggleHandler} />
+        <section id='Page'>
+					<Navbar
+						ToggleSideDrawer={this.SideDrawerToggleHandler}
+						ToggleModal={this.MainFormToggleHandler}
+						BodyHeight={this.state.BodyHeight}
+					/>
 					<SideDrawer
 						show={this.state.SideDrawerOpen}
 						CloseHandler={this.CloseDrawerHandler}
@@ -71,17 +89,18 @@ class App extends Component {
 					>
 						<MainForm closeModal={this.MainFormToggleHandler}></MainForm>
 					</Modal>
-					<Switch>
-						<Route path='/blog' exact component={Home} />
-						<Route path='/portfolio' exact component={Home} />
-						<Route path='/' exact component={Home} />
-					</Switch>
+						<Switch>
+							<Route path='/blog' exact component={Home} />
+							<Route path='/portfolio' exact component={Home} />
+							<Route path='/' exact component={Home} />
+						</Switch>
+					</section>
 
 					<Footer showModal={this.MainFormToggleHandler}></Footer>
 				</div>
 			</Router>
 		)
-  }
+	}
 }
 
-export default App;
+export default App
