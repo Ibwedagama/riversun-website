@@ -41,7 +41,7 @@ function Footer(props) {
 						</a>
 					</div>
 					<div className={classes.SocialItems}>
-						<a href='/' exact={true} target='_blank' rel='noopener noreferrer'>
+						<a href='https://www.behance.net/riversunstudio' exact={true} target='_blank' rel='noopener noreferrer'>
 							<img
 								src={BehanceIcon}
 								alt='Behance Icon'
@@ -52,7 +52,7 @@ function Footer(props) {
 						</a>
 					</div>
 					<div className={classes.SocialItems}>
-						<a href='/' exact={true} target='_blank' rel='noopener noreferrer'>
+						<a href='https://www.linkedin.com/company/riversunstudio' exact={true} target='_blank' rel='noopener noreferrer'>
 							<img
 								src={LinkedinIcon}
 								alt='Linkedin Icon'
