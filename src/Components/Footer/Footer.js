@@ -15,9 +15,10 @@ function Footer(props) {
 				<h1 className={classes.Title} data-aos='fade-up'>
 					So, what do you think?
 				</h1>
-				<h1 className={classes.Subtitle} data-aos='fade-up' data-aos-delay='200'>
+				<h1 className={classes.Subtitle} data-aos='fade-up' data-aos-delay='150'>
 					We'd love to <span className={classes.Underline}>chat</span> with you.
 				</h1>
+				<div id='footer-cta'></div>
 				<Button label='LETS TALK' icon={true} primary={true} toggle={true} initToggle={props.showModal} />
 				<div className={classes.SocialLink}>
 					<a href='https://www.instagram.com/riversunstudio/' target='_blank' rel='noopener noreferrer'>
@@ -65,7 +66,6 @@ function Footer(props) {
 						</div>
 					</a>
 				</div>
-				<div id='footer-cta'></div>
 			</section>
 			<div className={classes.Copywrite}>
 				<p>

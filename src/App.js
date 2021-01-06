@@ -21,7 +21,7 @@ class App extends Component {
 
 	componentDidMount() {
 		this.GetBodyHeight()
-		Aos.init({ duration: 550, once: true })
+		Aos.init({ duration: 550, once: true, delay: 150 })
 	}
 
 	SideDrawerToggleHandler = () => {
