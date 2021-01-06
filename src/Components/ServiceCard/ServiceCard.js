@@ -1,7 +1,5 @@
 import React from 'react'
 import classes from './ServiceCard.module.css'
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 
 function ServiceCard(props) {
 	let CardElement = (

@@ -20,8 +20,8 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-	this.GetBodyHeight()
-	Aos.init({ duration: 650, offset: 200 })
+		this.GetBodyHeight()
+		Aos.init({ duration: 550, once: true })
 	}
 
 	SideDrawerToggleHandler = () => {
@@ -44,61 +44,63 @@ class App extends Component {
 	}
 
 	GetBodyHeight = () => {
-		const elem = document.querySelector('#Page')
+		const elem = document.querySelector('#footer-cta')
 		if (elem) {
 			const rect = elem.getBoundingClientRect()
-      this.setState({ BodyHeight: rect.height })
+			this.setState({ BodyHeight: rect.top })
 		}
+		const scrollbarWidth = window.innerWidth - document.body.offsetWidth
+		console.log(scrollbarWidth)
 	}
 
 	render() {
 		return (
 			<Router>
 				<div className='App'>
-        <section id='Page'>
-					<Navbar
-						ToggleSideDrawer={this.SideDrawerToggleHandler}
-						ToggleModal={this.MainFormToggleHandler}
-						BodyHeight={this.state.BodyHeight}
-					/>
-					<SideDrawer
-						show={this.state.SideDrawerOpen}
-						CloseHandler={this.CloseDrawerHandler}
-						showModal={this.MainFormToggleHandler}
-					/>
-					<Modal
-						isOpen={this.state.MainFormOpen}
-						onRequestClose={this.MainFormToggleHandler}
-						closeTimeoutMS={500}
-						style={{
-							overlay: {
-								position: 'fixed',
-								display: 'flex',
-								justifyContent: 'center',
-								top: 0,
-								left: 0,
-								right: 0,
-								bottom: 0,
-								backgroundColor: 'rgba(0, 0, 0, 0.6)',
-								zIndex: 9999,
-							},
-							content: {
-								position: 'relative',
-								borderRadius: 'none',
-								inset: 'auto',
-								padding: 0,
-							},
-						}}
-					>
-						<MainForm closeModal={this.MainFormToggleHandler}></MainForm>
-					</Modal>
+					<section id='Page'>
+						<Navbar
+							ToggleSideDrawer={this.SideDrawerToggleHandler}
+							ToggleModal={this.MainFormToggleHandler}
+							BodyHeight={this.state.BodyHeight}
+						/>
+						<SideDrawer
+							show={this.state.SideDrawerOpen}
+							CloseHandler={this.CloseDrawerHandler}
+							showModal={this.MainFormToggleHandler}
+						/>
+						<Modal
+							isOpen={this.state.MainFormOpen}
+							onRequestClose={this.MainFormToggleHandler}
+							closeTimeoutMS={500}
+							style={{
+								overlay: {
+									position: 'fixed',
+									display: 'flex',
+									justifyContent: 'center',
+									top: 0,
+									left: 0,
+									right: 0,
+									bottom: 0,
+									backgroundColor: 'rgba(0, 0, 0, 0.6)',
+									zIndex: 9999,
+								},
+								content: {
+									position: 'relative',
+									borderRadius: 'none',
+									inset: 'auto',
+									padding: 0,
+								},
+							}}
+						>
+							<MainForm closeModal={this.MainFormToggleHandler}></MainForm>
+						</Modal>
 						<Switch>
 							<Route path='/blog' exact component={Home} />
 							<Route path='/portfolio' exact component={Home} />
 							<Route path='/' exact component={Home} />
 						</Switch>
 					</section>
-
+					<div id='footer'></div>
 					<Footer showModal={this.MainFormToggleHandler}></Footer>
 				</div>
 			</Router>

@@ -14,8 +14,8 @@ class Navbar extends Component {
 	}
 	handleScroll = () => {
 		if (window.scrollY > 20) {
-      document.querySelector('.Navbar').className = 'Navbar Scroll'
-      if (window.scrollY >= this.props.BodyHeight) {
+			document.querySelector('.Navbar').className = 'Navbar Scroll'
+			if (window.scrollY >= this.props.BodyHeight) {
 				document.querySelector('.Navbar').className = 'Navbar Scroll Hidden'
 			}
 		} else {
@@ -27,17 +27,11 @@ class Navbar extends Component {
 			<nav className='Navbar'>
 				<Logo className='Logo' />
 				<ul className='NavItems'>
-					<li>
-						<NavItems link='/' active>
-							Home
-						</NavItems>
-					</li>
-					<li>
-						<NavItems link='/portfolio'>Our Works</NavItems>
-					</li>
-					<li>
-						<NavItems link='/blog'>Blog</NavItems>
-					</li>
+					<NavItems link='/' active>
+						Home
+					</NavItems>
+					<NavItems link='/portfolio'>Our Works</NavItems>
+					<NavItems link='/blog'>Blog</NavItems>
 				</ul>
 				<section className='Button'>
 					<PrimaryButton label='Lets Talk' secondary={true} toggle={true} initToggle={this.props.ToggleModal} />
