@@ -7,6 +7,8 @@ import SideDrawer from './Components/Navbar/SideDrawer/SideDrawer'
 import Footer from './Components/Footer/Footer'
 import MainForm from './Components/MainForm/MainForm'
 import Modal from 'react-modal'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 Modal.setAppElement('#root')
 
@@ -18,7 +20,8 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-    this.GetBodyHeight()
+	this.GetBodyHeight()
+	Aos.init({ duration: 650, offset: 200 })
 	}
 
 	SideDrawerToggleHandler = () => {
