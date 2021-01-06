@@ -12,14 +12,16 @@ function Footer(props) {
 	return (
 		<>
 			<section className={classes.Footer}>
-				<h1 className={classes.Title}>So, what do you think?</h1>
-				<h1 className={classes.Subtitle}>
+				<h1 className={classes.Title} data-aos='fade-up'>
+					So, what do you think?
+				</h1>
+				<h1 className={classes.Subtitle} data-aos='fade-up' data-aos-delay='400'>
 					We'd love to <span className={classes.Underline}>chat</span> with you.
 				</h1>
 				<Button label='LETS TALK' icon={true} primary={true} toggle={true} initToggle={props.showModal} />
 				<div className={classes.SocialLink}>
-					<div className={classes.SocialItems}>
-						<a href='https://www.instagram.com/riversunstudio/' exact={true} target='_blank' rel='noopener noreferrer'>
+					<a href='https://www.instagram.com/riversunstudio/' exact={true} target='_blank' rel='noopener noreferrer'>
+						<div className={classes.SocialItems}>
 							<img
 								src={InstagramIcon}
 								alt='Instagram Icon'
@@ -27,10 +29,10 @@ function Footer(props) {
 									maxWidth: '20px',
 								}}
 							/>
-						</a>
-					</div>
-					<div className={classes.SocialItems}>
-						<a href='https://dribbble.com/riversunstudio/shots' exact={true} target='_blank' rel='noopener noreferrer'>
+						</div>
+					</a>
+					<a href='https://dribbble.com/riversunstudio/shots' exact={true} target='_blank' rel='noopener noreferrer'>
+						<div className={classes.SocialItems}>
 							<img
 								src={DribbbleIcon}
 								alt='Dribbble Icon'
@@ -38,10 +40,10 @@ function Footer(props) {
 									maxWidth: '20px',
 								}}
 							/>
-						</a>
-					</div>
-					<div className={classes.SocialItems}>
-						<a href='https://www.behance.net/riversunstudio' exact={true} target='_blank' rel='noopener noreferrer'>
+						</div>
+					</a>
+					<a href='https://www.behance.net/riversunstudio' exact={true} target='_blank' rel='noopener noreferrer'>
+						<div className={classes.SocialItems}>
 							<img
 								src={BehanceIcon}
 								alt='Behance Icon'
@@ -49,10 +51,15 @@ function Footer(props) {
 									maxWidth: '22px',
 								}}
 							/>
-						</a>
-					</div>
-					<div className={classes.SocialItems}>
-						<a href='https://www.linkedin.com/company/riversunstudio' exact={true} target='_blank' rel='noopener noreferrer'>
+						</div>
+					</a>
+					<a
+						href='https://www.linkedin.com/company/riversunstudio'
+						exact={true}
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<div className={classes.SocialItems}>
 							<img
 								src={LinkedinIcon}
 								alt='Linkedin Icon'
@@ -60,8 +67,8 @@ function Footer(props) {
 									maxWidth: '18px',
 								}}
 							/>
-						</a>
-					</div>
+						</div>
+					</a>
 				</div>
 			</section>
 			<div className={classes.Copywrite}>

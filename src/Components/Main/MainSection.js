@@ -14,10 +14,10 @@ import ProjectCard from '../ProjectCard/ProjectCard'
 import PrimaryButton from '../Buttons/PrimaryButton'
 
 function MainSection(props) {
-  return (
+	return (
 		<main>
 			<section className={classes.TwoColumn}>
-				<h1 className={classes.Title} style={{ maxWidth: '285px' }}>
+				<h1 className={classes.Title} style={{ maxWidth: '285px' }} data-aos='fade-up'>
 					<span className={classes.Numbering}>01</span>
 					Who We Are
 				</h1>
@@ -27,7 +27,7 @@ function MainSection(props) {
 				</p>
 			</section>
 			<section className={classes.OneColumn} style={{ justifyItems: 'center' }}>
-				<h1 className={classes.Title}>
+				<h1 className={classes.Title} data-aos='fade-up'> 
 					<span className={classes.Numbering}>02</span>What We Make
 				</h1>
 				<p className={classes.Subtitle}>Some of the services we can discuss together</p>
@@ -57,7 +57,7 @@ function MainSection(props) {
 				/>
 			</div>
 			<section className={classes.OneColumn}>
-				<h1 className={classes.Title}>
+				<h1 className={classes.Title} data-aos='fade-up'>
 					<span className={classes.Numbering}>03</span>How We Work
 				</h1>
 				<p className={classes.Subtitle}>The right solution come out from the right process</p>
@@ -89,7 +89,7 @@ function MainSection(props) {
 				></ProcessItem>
 			</section>
 			<section className={classes.OneColumn}>
-				<h1 className={classes.Title}>
+				<h1 className={classes.Title} data-aos='fade-up'>
 					<span className={classes.Numbering}>04</span>Featured Project
 				</h1>
 				<p className={classes.Subtitle}>Some of the projects we've made with our amazing clients</p>
