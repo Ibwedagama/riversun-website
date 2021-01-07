@@ -19,6 +19,7 @@ class App extends Component {
 		SideDrawerOpen: false,
 		MainFormOpen: false,
 		BodyHeight: null,
+		EmailSubmitLoading: false,
 	}
 
 	componentDidMount() {
@@ -55,15 +56,18 @@ class App extends Component {
 
 	SendEmail = (e) => {
 		e.preventDefault()
-		console.log('mengirim email')
+		this.setState((prevState) => ({
+			EmailSubmitLoading: !prevState.EmailSubmitLoading,
+		}))
+		
 		emailjs.sendForm('service_me0my3p', 'template_u6bo25h', e.target, 'user_wJwanmXN8wIV1drPmPJvf').then(
 			(result) => {
-				console.log(result.text)
+				this.setState({EmailSubmitLoading : false})
 				alert("Thankyou for submiting, we'll contact you soon :)")
 				e.target.reset()
 			},
 			(error) => {
-				console.log(error.text)
+				this.setState({EmailSubmitLoading : false})
 				alert('Sorry something wrong accour')
 			}
 		)
@@ -107,7 +111,7 @@ class App extends Component {
 							},
 						}}
 					>
-						<MainForm closeModal={this.MainFormToggleHandler} sendEmail={this.SendEmail}></MainForm>
+						<MainForm closeModal={this.MainFormToggleHandler} sendEmail={this.SendEmail} loading={this.state.EmailSubmitLoading}></MainForm>
 					</Modal>
 
 					<Switch>

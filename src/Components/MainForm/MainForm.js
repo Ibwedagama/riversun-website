@@ -4,6 +4,13 @@ import Button from '../Buttons/PrimaryButton'
 import CloseIcon from '@material-ui/icons/Close'
 
 const MainForm = (props) => {
+	let SubmitButton = null
+	if (props.loading) {
+		SubmitButton = <Button fourth={true} label='SENDING MESSAGE...' />
+	} else {
+		SubmitButton = <Button fourth={true} label='SEND MESSAGE' icon={true} type='submit' />
+	}
+
 	return (
 		<section className={classes.MainForm}>
 			<div className={classes.CloseButton}>
@@ -41,7 +48,7 @@ const MainForm = (props) => {
 					></textarea>
 				</div>
 				<div className={classes.Buttons}>
-					<Button fourth={true} label='SEND MESSAGE' icon={true} type="submit" />
+					{SubmitButton}
 					<p className={classes.Subtitle} style={{ marginBottom: '0' }}>
 						Or
 					</p>
