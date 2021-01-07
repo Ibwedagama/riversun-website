@@ -1,52 +1,52 @@
-.NavItems{
-    margin: 0 20px;
+.NavItems {
+	margin: 0 20px;
 }
 
-.NavItems a{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    text-align: center;
-    color: #333333;
-    text-decoration: none;
-    cursor: pointer;
+.NavItems a {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+	text-align: center;
+	color: #333333;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-a:hover{
-   text-shadow: 0 0 .3px black;
+a:hover {
+	text-shadow: 0 0 0.3px black;
 }
 
 .IsActive {
-    color: #151515;
-    position: relative;
-    z-index: 1;
-    font-weight: bold;
-    text-decoration: underline;
+	color: #151515;
+	position: relative;
+	z-index: 1;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
-.IsActive:after{
-    display: block;
-    position: absolute;
-    width:100%;
-    border-bottom: 6px solid #ffffff;
-    content: '';
-    top: 12px;
-    z-index: -1;
+.IsActive:after {
+	display: block;
+	position: absolute;
+	width: 100%;
+	border-bottom: 6px solid #ffffff;
+	content: '';
+	top: 12px;
+	z-index: -1;
 }
 
 .SecondaryActive {
-    color: #151515;
-    position: relative;
-    z-index: 1;
-    font-weight: bold;
-    text-decoration: underline;
+	color: #151515;
+	position: relative;
+	z-index: 1;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
-.SecondaryActive:after{
-    display: block;
-    position: absolute;
-    width:100%;
-    border-bottom: 6px solid #FFD600;
-    content: '';
-    top: 12px;
-    z-index: -1;
+.SecondaryActive:after {
+	display: block;
+	position: absolute;
+	width: 100%;
+	border-bottom: 6px solid #ffd600;
+	content: '';
+	top: 12px;
+	z-index: -1;
 }

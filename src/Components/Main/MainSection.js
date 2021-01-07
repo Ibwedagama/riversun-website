@@ -17,7 +17,7 @@ function MainSection(props) {
 	return (
 		<main>
 			<section className={classes.TwoColumn} data-aos='fade-up'>
-				<h1 className={classes.Title} style={{ maxWidth: '285px' }} >
+				<h1 className={classes.Title} style={{ maxWidth: '285px' }}>
 					<span className={classes.Numbering}>01</span>
 					Who We Are
 				</h1>
@@ -27,7 +27,7 @@ function MainSection(props) {
 				</p>
 			</section>
 			<section className={classes.OneColumn} style={{ justifyItems: 'center' }} data-aos='fade-up'>
-				<h1 className={classes.Title} >
+				<h1 className={classes.Title}>
 					<span className={classes.Numbering}>02</span>What We Make
 				</h1>
 				<p className={classes.Subtitle}>Some of the services we can discuss together</p>
@@ -57,7 +57,7 @@ function MainSection(props) {
 				/>
 			</div>
 			<section className={classes.OneColumn} data-aos='fade-up'>
-				<h1 className={classes.Title} >
+				<h1 className={classes.Title}>
 					<span className={classes.Numbering}>03</span>How We Work
 				</h1>
 				<p className={classes.Subtitle}>The right solution come out from the right process</p>
