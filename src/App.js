@@ -20,8 +20,8 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.GetBodyHeight()
 		Aos.init({ duration: 550, once: true, delay: 150 })
+		this.GetBodyHeight()
 	}
 
 	SideDrawerToggleHandler = () => {
@@ -49,8 +49,6 @@ class App extends Component {
 			const rect = elem.getBoundingClientRect()
 			this.setState({ BodyHeight: rect.top })
 		}
-		const scrollbarWidth = window.innerWidth - document.body.offsetWidth
-		console.log(scrollbarWidth)
 	}
 
 	render() {

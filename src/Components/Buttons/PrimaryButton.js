@@ -6,10 +6,8 @@ import { Link } from 'react-scroll'
 
 function PrimaryButton(props) {
 	let ButtonClasses
-  let LinkedButton
-  
+	let LinkedButton
 
-  
 	if (props.primary) {
 		ButtonClasses = classes.PrimaryButton
 	}
@@ -40,9 +38,9 @@ function PrimaryButton(props) {
 				{props.icon ? <ArrowForwardIcon style={{ marginLeft: '10px' }} /> : null}
 			</div>
 		)
-  }
-  if(props.scrollTo){
-    LinkedButton = (
+	}
+	if (props.scrollTo) {
+		LinkedButton = (
 			<Link to={props.scrollTo} spy={true} smooth={true}>
 				<div className={classes.ButtonLable}>
 					{props.whatsapp ? <WhatsAppIcon style={{ marginRight: '10px' }} /> : null}
@@ -51,7 +49,7 @@ function PrimaryButton(props) {
 				</div>
 			</Link>
 		)
-  }
+	}
 	return (
 		<button className={ButtonClasses} onClick={props.toggle ? props.initToggle : null}>
 			{LinkedButton}
