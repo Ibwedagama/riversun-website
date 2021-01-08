@@ -80,7 +80,8 @@
     margin-top: 32px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 20px;
     align-items: center;
     justify-content: flex-start;
     padding-bottom: 117px;

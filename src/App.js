@@ -59,15 +59,14 @@ class App extends Component {
 		this.setState((prevState) => ({
 			EmailSubmitLoading: !prevState.EmailSubmitLoading,
 		}))
-		
 		emailjs.sendForm('service_me0my3p', 'template_u6bo25h', e.target, 'user_wJwanmXN8wIV1drPmPJvf').then(
 			(result) => {
-				this.setState({EmailSubmitLoading : false})
+				this.setState({ EmailSubmitLoading: false })
 				alert("Thankyou for submiting, we'll contact you soon :)")
 				e.target.reset()
 			},
 			(error) => {
-				this.setState({EmailSubmitLoading : false})
+				this.setState({ EmailSubmitLoading: false })
 				alert('Sorry something wrong accour')
 			}
 		)
@@ -106,12 +105,19 @@ class App extends Component {
 							content: {
 								position: 'relative',
 								borderRadius: 'none',
-								inset: 'auto',
+								top: 0,
+								left: 0,
+								right: 0,
+								bottom: 0,
 								padding: 0,
 							},
 						}}
 					>
-						<MainForm closeModal={this.MainFormToggleHandler} sendEmail={this.SendEmail} loading={this.state.EmailSubmitLoading}></MainForm>
+						<MainForm
+							closeModal={this.MainFormToggleHandler}
+							sendEmail={this.SendEmail}
+							loading={this.state.EmailSubmitLoading}
+						></MainForm>
 					</Modal>
 
 					<Switch>

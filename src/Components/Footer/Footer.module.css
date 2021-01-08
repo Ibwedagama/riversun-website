@@ -34,7 +34,7 @@
 }
 
 .SocialLink {
-	margin-top: 79px;
+	/* margin-top: 79px; */
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -61,7 +61,7 @@
 
 .FooterCTA {
 	margin-top: 16px;
-	margin-bottom: 49px;
+	margin-bottom: 79px;
 }
 
 .Copywrite {
@@ -115,6 +115,9 @@
 		height: 100vh;
 		padding-top: 150px;
 	}
+	.FooterCTA {
+		margin-bottom: 49px;
+	}
 	.Title,
 	.Subtitle {
 		font-size: 36px;
@@ -125,7 +128,7 @@
 		text-align: center;
 	}
 	.SocialLink {
-		margin-top: 59px;
+		/* margin-top: 59px; */
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 26px;

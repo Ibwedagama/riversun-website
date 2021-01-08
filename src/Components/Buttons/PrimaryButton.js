@@ -51,7 +51,7 @@ function PrimaryButton(props) {
 		)
 	}
 	return (
-		<button className={ButtonClasses} onClick={props.toggle ? props.initToggle : null}>
+		<button className={ButtonClasses} onClick={props.toggle ? props.initToggle : null} {...props}>
 			{LinkedButton}
 		</button>
 	)

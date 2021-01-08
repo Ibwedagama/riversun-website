@@ -8,7 +8,7 @@ const MainForm = (props) => {
 	if (props.loading) {
 		SubmitButton = <Button fourth={true} label='SENDING MESSAGE...' />
 	} else {
-		SubmitButton = <Button fourth={true} label='SEND MESSAGE' icon={true} type='submit' />
+		SubmitButton = <Button fourth={true} label='SEND MESSAGE' icon={true} type='submit' form='form-email-submit' />
 	}
 
 	return (
@@ -18,7 +18,7 @@ const MainForm = (props) => {
 			</div>
 			<h1 className={classes.Title}>Lets Talk</h1>
 			<p className={classes.Subtitle}>Hi! We’d love to know more about you, so feel free to message us!</p>
-			<form onSubmit={props.sendEmail}>
+			<form onSubmit={props.sendEmail} id='form-email-submit'>
 				<div className={classes.InputElement}>
 					<div>
 						<p className={classes.Label}>Your Name</p>
@@ -52,7 +52,9 @@ const MainForm = (props) => {
 					<p className={classes.Subtitle} style={{ marginBottom: '0' }}>
 						Or
 					</p>
-					<Button secondary={true} label='WHATSAPP US' whatsapp={true} />
+					<a href='https://wa.me/62895800287995?text=Hello%20Riversun%20Studio%20!' target='_blank' rel='noopener noreferrer'>
+						<Button secondary={true} label='WHATSAPP US' whatsapp={true} type='button' />
+					</a>
 				</div>
 			</form>
 		</section>
