@@ -52,7 +52,11 @@ const MainForm = (props) => {
 					<p className={classes.Subtitle} style={{ marginBottom: '0' }}>
 						Or
 					</p>
-					<a href='https://wa.me/62895800287995?text=Hello%20Riversun%20Studio%20!' target='_blank' rel='noopener noreferrer'>
+					<a
+						href='https://wa.me/62895800287994?text=Hello%20Riversun%20Studio :)'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						<Button secondary={true} label='WHATSAPP US' whatsapp={true} type='button' />
 					</a>
 				</div>
