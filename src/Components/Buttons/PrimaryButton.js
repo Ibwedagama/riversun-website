@@ -22,7 +22,7 @@ function PrimaryButton(props) {
 	}
 	if (props.link) {
 		LinkedButton = (
-			<NavLink to={props.link} exact={true}>
+			<NavLink to={props.link} exact>
 				<div className={classes.ButtonLable}>
 					{props.whatsapp ? <WhatsAppIcon style={{ marginRight: '10px' }} /> : null}
 					{props.label}
@@ -41,7 +41,7 @@ function PrimaryButton(props) {
 	}
 	if (props.scrollTo) {
 		LinkedButton = (
-			<Link to={props.scrollTo} spy={true} smooth={true}>
+			<Link to={props.scrollTo} spy smooth>
 				<div className={classes.ButtonLable}>
 					{props.whatsapp ? <WhatsAppIcon style={{ marginRight: '10px' }} /> : null}
 					{props.label}

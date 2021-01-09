@@ -10,7 +10,6 @@ import MainForm from './Components/MainForm/MainForm'
 import Modal from 'react-modal'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import emailjs from 'emailjs-com'
 
 Modal.setAppElement('#root')
 
@@ -19,7 +18,6 @@ class App extends Component {
 		SideDrawerOpen: false,
 		MainFormOpen: false,
 		BodyHeight: null,
-		EmailSubmitLoading: false,
 	}
 
 	componentDidMount() {
@@ -42,6 +40,7 @@ class App extends Component {
 		}))
 		this.setState({ SideDrawerOpen: false })
 	}
+	
 	CloseMainFormHandler = () => {
 		this.setState({ MainFormOpen: false })
 	}
@@ -52,24 +51,6 @@ class App extends Component {
 			const rect = elem.getBoundingClientRect()
 			this.setState({ BodyHeight: rect.top })
 		}
-	}
-
-	SendEmail = (e) => {
-		e.preventDefault()
-		this.setState((prevState) => ({
-			EmailSubmitLoading: !prevState.EmailSubmitLoading,
-		}))
-		emailjs.sendForm('service_me0my3p', 'template_u6bo25h', e.target, 'user_wJwanmXN8wIV1drPmPJvf').then(
-			(result) => {
-				this.setState({ EmailSubmitLoading: false })
-				alert("Thankyou for submiting, we'll contact you soon :)")
-				e.target.reset()
-			},
-			(error) => {
-				this.setState({ EmailSubmitLoading: false })
-				alert('Sorry something wrong accour')
-			}
-		)
 	}
 
 	render() {
@@ -115,8 +96,6 @@ class App extends Component {
 					>
 						<MainForm
 							closeModal={this.MainFormToggleHandler}
-							sendEmail={this.SendEmail}
-							loading={this.state.EmailSubmitLoading}
 						></MainForm>
 					</Modal>
 

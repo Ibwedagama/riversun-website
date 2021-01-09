@@ -34,7 +34,7 @@ class Navbar extends Component {
 					<NavItems link='/blog'>Blog</NavItems>
 				</ul>
 				<section className='Button'>
-					<PrimaryButton label='Lets Talk' secondary={true} toggle={true} initToggle={this.props.ToggleModal} />
+					<PrimaryButton label='Lets Talk' secondary toggle initToggle={this.props.ToggleModal} />
 				</section>
 				<div className='ToggleButton' onClick={this.props.ToggleSideDrawer}>
 					<MenuIcon />

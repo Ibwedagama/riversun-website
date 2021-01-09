@@ -15,19 +15,19 @@ function SideDrawer(props) {
 				<CloseIcon onClick={props.CloseHandler} />
 			</div>
 			<ul className='Items'>
-				<NavItems link='/' active secondary={true}>
+				<NavItems link='/' active secondary>
 					Home
 				</NavItems>
 
-				<NavItems link='/portfolio' secondary={true}>
+				<NavItems link='/portfolio' secondary>
 					Our Works
 				</NavItems>
 
-				<NavItems link='/blog' secondary={true}>
+				<NavItems link='/blog' secondary>
 					Blog
 				</NavItems>
 
-				<PrimaryButton label='Lets Talk' secondary={true} toggle={true} initToggle={props.showModal} />
+				<PrimaryButton label='Lets Talk' secondary toggle initToggle={props.showModal} />
 			</ul>
 		</div>
 	)

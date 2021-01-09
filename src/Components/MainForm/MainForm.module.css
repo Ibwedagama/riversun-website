@@ -115,6 +115,7 @@
     }
     .InputForm{
         max-width: 309px;
+        width: 100%;
     }
     .Buttons{
         flex-direction: column;

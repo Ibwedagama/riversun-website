@@ -19,10 +19,14 @@ function Footer(props) {
 					We'd love to <span className={classes.Underline}>chat</span> with you.
 				</h1>
 				<div className={classes.FooterCTA}>
-					<Button label='LETS TALK' icon={true} primary={true} toggle={true} initToggle={props.showModal} />
+					<Button label='LETS TALK' icon primary toggle initToggle={props.showModal} />
 				</div>
 				<div className={classes.SocialLink}>
-					<a href='https://www.instagram.com/riversunstudio/' target='_blank' rel='noopener noreferrer'>
+					<a
+						href='https://www.instagram.com/riversunstudio/'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						<div className={classes.SocialItems}>
 							<img
 								src={InstagramIcon}
@@ -33,7 +37,11 @@ function Footer(props) {
 							/>
 						</div>
 					</a>
-					<a href='https://dribbble.com/riversunstudio/shots' target='_blank' rel='noopener noreferrer'>
+					<a
+						href='https://dribbble.com/riversunstudio/shots'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						<div className={classes.SocialItems}>
 							<img
 								src={DribbbleIcon}
@@ -44,7 +52,11 @@ function Footer(props) {
 							/>
 						</div>
 					</a>
-					<a href='https://www.behance.net/riversunstudio' target='_blank' rel='noopener noreferrer'>
+					<a
+						href='https://www.behance.net/riversunstudio'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						<div className={classes.SocialItems}>
 							<img
 								src={BehanceIcon}
@@ -55,7 +67,11 @@ function Footer(props) {
 							/>
 						</div>
 					</a>
-					<a href='https://www.linkedin.com/company/riversunstudio' target='_blank' rel='noopener noreferrer'>
+					<a
+						href='https://www.linkedin.com/company/riversunstudio'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						<div className={classes.SocialItems}>
 							<img
 								src={LinkedinIcon}

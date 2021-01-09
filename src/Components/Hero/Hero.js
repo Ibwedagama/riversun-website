@@ -9,14 +9,18 @@ function Hero() {
 				<div className={classes.Left}>
 					<h1 className={classes.MainHeader}>Welcome To Riversun</h1>
 					<p className={classes.Subtitle}>
-						We are a team of passionate UI/UX Designer and Website Developer. We will be happy to collaborate with you
-						and create something amazing!
+						We are a team of passionate UI/UX Designer and Website Developer. We will be happy to
+						collaborate with you and create something amazing!
 					</p>
-					<PrimaryButton label='KNOW MORE' primary={true} icon={true} scrollTo='MainSection' />
+					<PrimaryButton label='KNOW MORE' primary icon scrollTo='MainSection' />
 				</div>
 
 				<div className={classes.Right}>
-					<img src={HeroImage} alt='Riversun Collaboration Illustration' className={classes.Illustration} />
+					<img
+						src={HeroImage}
+						alt='Riversun Collaboration Illustration'
+						className={classes.Illustration}
+					/>
 				</div>
 			</div>
 		</section>

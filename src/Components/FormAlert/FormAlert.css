@@ -1,0 +1,56 @@
+.AlertError {
+	background: #ffffff;
+	margin-top: 24px;
+	padding: 20px 25px;
+	border: 1px solid #ff2b2b;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 19px;
+	animation : showAlert 650ms; 
+}
+
+.AlertSuccess {
+	background: #ffffff;
+	margin-top: 24px;
+	padding: 20px 25px;
+	border: 1px solid #43d787;
+	display: grid;
+	grid-template-columns: 10% auto;
+	align-items: center;
+	column-gap: 19px;
+	animation : showAlert 500ms; 
+}
+
+@keyframes showAlert {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.AlertInfo {
+	display: block;
+}
+
+.AlertIcon svg {
+	width: 46px;
+	height: 46px;
+}
+
+.AlertTitle {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px;
+	color: #111517;
+	margin-bottom: 6px;
+}
+
+.AlertSubtitle {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #111517;
+}

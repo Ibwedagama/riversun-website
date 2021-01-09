@@ -22,8 +22,9 @@ function MainSection(props) {
 					Who We Are
 				</h1>
 				<p className={classes.Subtitle} style={{ paddingTop: '3rem' }}>
-					We are a team of passionate UI/UX Designer, and we believe with the right design and strong collaboration, we
-					can support your brand growth and help you fulfill your vision and goals.
+					We are a team of passionate UI/UX Designer, and we believe with the right design and
+					strong collaboration, we can support your brand growth and help you fulfill your vision
+					and goals.
 				</p>
 			</section>
 			<section className={classes.OneColumn} style={{ justifyItems: 'center' }} data-aos='fade-up'>
@@ -115,7 +116,7 @@ function MainSection(props) {
 				></ProjectCard>
 			</section>
 			<div className={classes.ProjectCTA}>
-				<PrimaryButton label='MORE PROJECT' icon={true} secondary={true} link='/portfolio' />
+				<PrimaryButton label='MORE PROJECT' icon secondary link='/portfolio' />
 			</div>
 		</main>
 	)
