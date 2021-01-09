@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import Home from './Pages/Home/Home'
-import Projects from './Pages/Projects/Projects'
-import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Navbar from './Components/Navbar/Navbar'
-import SideDrawer from './Components/Navbar/SideDrawer/SideDrawer'
-import Footer from './Components/Footer/Footer'
-import MainForm from './Components/MainForm/MainForm'
 import Modal from 'react-modal'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import './App.css'
+import Home from './Pages/Home/Home'
+import Projects from './Pages/Projects/Projects'
+import PageNotFound from './Pages/NotFound/NotFound'
+import Navbar from './Components/Navbar/Navbar'
+import SideDrawer from './Components/Navbar/SideDrawer/SideDrawer'
+// import Footer from './Components/Footer/Footer'
+import MainForm from './Components/MainForm/MainForm'
 
 Modal.setAppElement('#root')
 
@@ -40,7 +41,7 @@ class App extends Component {
 		}))
 		this.setState({ SideDrawerOpen: false })
 	}
-	
+
 	CloseMainFormHandler = () => {
 		this.setState({ MainFormOpen: false })
 	}
@@ -94,18 +95,23 @@ class App extends Component {
 							},
 						}}
 					>
-						<MainForm
-							closeModal={this.MainFormToggleHandler}
-						></MainForm>
+						<MainForm closeModal={this.MainFormToggleHandler}></MainForm>
 					</Modal>
 
 					<Switch>
 						<Route path='/blog' exact component={Home} />
-						<Route path='/portfolio' exact component={Projects} />
-						<Route path='/' exact component={Home} />
+						<Route
+							path='/portfolio'
+							exact
+							render={(props) => <Projects {...props} showModal={this.MainFormToggleHandler} />}
+						/>
+						<Route
+							path='/'
+							exact
+							render={(props) => <Home {...props} showModal={this.MainFormToggleHandler} />}
+						/>
+						<Route path='*' component={PageNotFound} />
 					</Switch>
-
-					<Footer showModal={this.MainFormToggleHandler}></Footer>
 				</div>
 			</Router>
 		)

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MainSection from '../../Components/Main/MainSection'
 import Hero from '../../Components/Hero/Hero'
 import './Home.css'
+import Footer from '../../Components/Footer/Footer'
 
 class Home extends Component {
   state = {
@@ -33,6 +34,7 @@ class Home extends Component {
 						ToggleServiceTwo={this.ServiceTwoToggleHandler}
 					/>
 				</section>
+				<Footer showModal={this.props.showModal}></Footer>
 			</main>
 		)
   }
