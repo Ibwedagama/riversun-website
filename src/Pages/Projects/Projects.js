@@ -9,7 +9,10 @@ export class Projects extends Component {
 	state = {
 		showProject: 6,
 	}
-	componentDidMount() {}
+	componentDidMount() {
+		window.scrollTo({ top: 0, behavior: 'smooth' })
+	}
+
 	render() {
 		return (
 			<div>

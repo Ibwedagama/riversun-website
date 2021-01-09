@@ -5,22 +5,27 @@ import './Home.css'
 import Footer from '../../Components/Footer/Footer'
 
 class Home extends Component {
-  state = {
-    ShowServiceOne: false,
-    ShowServiceTwo: false,
-  }
-  ServiceOneToggleHandler = () => {
-    this.setState((prevState) => ({
-      ShowServiceOne: !prevState.ShowServiceOne,
-    }))
-  }
-  ServiceTwoToggleHandler = () => {
-    this.setState((prevState) => ({
-      ShowServiceTwo: !prevState.ShowServiceTwo,
-    }))
-  }
-  render() {
-    return (
+	state = {
+		ShowServiceOne: false,
+		ShowServiceTwo: false,
+	}
+
+	componentDidMount() {
+		window.scrollTo({ top: 0, behavior: 'smooth' })
+	}
+
+	ServiceOneToggleHandler = () => {
+		this.setState((prevState) => ({
+			ShowServiceOne: !prevState.ShowServiceOne,
+		}))
+	}
+	ServiceTwoToggleHandler = () => {
+		this.setState((prevState) => ({
+			ShowServiceTwo: !prevState.ShowServiceTwo,
+		}))
+	}
+	render() {
+		return (
 			<main>
 				<section className='Hero'>
 					<Hero />
@@ -37,7 +42,7 @@ class Home extends Component {
 				<Footer showModal={this.props.showModal}></Footer>
 			</main>
 		)
-  }
+	}
 }
 
 export default Home
