@@ -44,7 +44,6 @@ class MainForm extends Component {
 					// alert('Sorry something wrong accour')
 				}
 			)
-			.finally(this.hideAlert())
 	}
 
 	nameChangeHandler = (e) => {
@@ -75,15 +74,6 @@ class MainForm extends Component {
 		this.setState({
 			message: e.target.value,
 		})
-	}
-
-	hideAlert = () => {
-		setTimeout(() => {
-			this.setState({
-				ShowAlert: false,
-				SubmitError: false,
-			})
-		}, 5000)
 	}
 
 	render() {
