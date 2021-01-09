@@ -23,27 +23,28 @@ class MainForm extends Component {
 			EmailSubmitLoading: !prevState.EmailSubmitLoading,
 		}))
 		// 'user_wJwanmXN8wIV1drPmPJvf'
-		emailjs.sendForm('service_me0my3p', 'template_u6bo25h', e.target).then(
-			(result) => {
-				this.setState({
-					EmailSubmitLoading: false,
-					ShowAlert: true,
-					SubmitError: false,
-					name: '',
-					email: '',
-					company: '',
-					subject: '',
-					message: '',
-				})
-				// alert("Thankyou for submiting, we'll contact you soon :)")
-			},
-			(error) => {
-				this.setState({ EmailSubmitLoading: false, ShowAlert: true, SubmitError: true })
-				// alert('Sorry something wrong accour')
-			}
-		).finally(
-			this.hideAlert()
-		)
+		emailjs
+			.sendForm('service_me0my3p', 'template_u6bo25h', e.target, 'user_wJwanmXN8wIV1drPmPJvf')
+			.then(
+				(result) => {
+					this.setState({
+						EmailSubmitLoading: false,
+						ShowAlert: true,
+						SubmitError: false,
+						name: '',
+						email: '',
+						company: '',
+						subject: '',
+						message: '',
+					})
+					// alert("Thankyou for submiting, we'll contact you soon :)")
+				},
+				(error) => {
+					this.setState({ EmailSubmitLoading: false, ShowAlert: true, SubmitError: true })
+					// alert('Sorry something wrong accour')
+				}
+			)
+			.finally(this.hideAlert())
 	}
 
 	nameChangeHandler = (e) => {
