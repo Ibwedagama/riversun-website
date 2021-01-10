@@ -19,7 +19,7 @@ function Footer(props) {
 					We'd love to <span className={classes.Underline}>chat</span> with you.
 				</h1>
 				<div className={classes.FooterCTA}>
-					<Button label='LETS TALK' icon primary toggle initToggle={props.showModal} />
+					<Button label={`LET'S TALK`} icon primary toggle initToggle={props.showModal} />
 				</div>
 				<div className={classes.SocialLink}>
 					<a

@@ -110,7 +110,7 @@ class MainForm extends Component {
 				<div className={classes.CloseButton}>
 					<CloseIcon onClick={this.props.closeModal} />
 				</div>
-				<h1 className={classes.Title}>Lets Talk</h1>
+				<h1 className={classes.Title}>Let's Talk</h1>
 				<p className={classes.Subtitle}>
 					Hi! We’d love to know more about you, so feel free to message us!
 				</p>

@@ -3,6 +3,7 @@ import MainSection from '../../Components/Main/MainSection'
 import Hero from '../../Components/Hero/Hero'
 import './Home.css'
 import Footer from '../../Components/Footer/Footer'
+import { Helmet } from 'react-helmet'
 
 class Home extends Component {
 	state = {
@@ -27,6 +28,13 @@ class Home extends Component {
 	render() {
 		return (
 			<main>
+				<Helmet>
+					<title>Riversun Studio</title>
+					<meta
+						name='description'
+						content={`We are a team of passionate UI/UX Designer and Website Developer. We will be happy to collaborate with you and create something amazing!`}
+					/>
+				</Helmet>
 				<section className='Hero'>
 					<Hero />
 				</section>

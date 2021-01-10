@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import './Projects.css'
+import './Blog.css'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard'
 import InputSelect from '../../Components/InputSelect/InputSelect'
 import ProjectSatu from '../../Assets/FP1.webp'
 import Footer from '../../Components/Footer/Footer'
 import { Helmet } from 'react-helmet'
 
-export class Projects extends Component {
+export class Blog extends Component {
 	state = {
 		showProject: 6,
 	}
@@ -18,15 +18,15 @@ export class Projects extends Component {
 		return (
 			<div>
 				<Helmet>
-					<title>Riversun Studio - Portfolio</title>
+					<title>Riversun Studio - Blog</title>
 					<meta
 						name='description'
-						content={`Here's our projects we've created with our amazing clients troughout the year`}
+						content={`Here's everything we've learn so far about the industries, best practices and many more`}
 					/>
 				</Helmet>
-				<main className='Projects'>
+				<main className='Blog'>
 					<section className='Header'>
-						<h1 className='Title'>Our Works</h1>
+						<h1 className='Title'>Blog</h1>
 					</section>
 					<section className='Util'>
 						<InputSelect
@@ -37,9 +37,7 @@ export class Projects extends Component {
 						<InputSelect name='sortby' label='Sort By' options={['Newest', 'Oldest']}></InputSelect>
 					</section>
 					<section className='Content'>
-						<p style={{ fontWeight: 'bold', marginBottom: '100px' }}>
-							Sorry, there is no project yet
-						</p>
+						<p style={{ fontWeight: 'bold', marginBottom: '100px' }}>Sorry, there is no post yet</p>
 					</section>
 				</main>
 				<Footer showModal={this.props.showModal}></Footer>
@@ -48,4 +46,4 @@ export class Projects extends Component {
 	}
 }
 
-export default Projects
+export default Blog
