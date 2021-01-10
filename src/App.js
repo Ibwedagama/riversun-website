@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'
 import './App.css'
 import Home from './Pages/Home/Home'
 import Projects from './Pages/Projects/Projects'
+import Blog from './Pages/Blog/Blog'
 import PageNotFound from './Pages/NotFound/NotFound'
 import Navbar from './Components/Navbar/Navbar'
 import SideDrawer from './Components/Navbar/SideDrawer/SideDrawer'
@@ -99,7 +100,11 @@ class App extends Component {
 					</Modal>
 
 					<Switch>
-						<Route path='/blog' exact component={Home} />
+						<Route
+							path='/blog'
+							exact
+							render={(props) => <Blog {...props} showModal={this.MainFormToggleHandler} />}
+						/>
 						<Route
 							path='/portfolio'
 							exact

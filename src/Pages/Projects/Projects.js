@@ -10,7 +10,7 @@ export class Projects extends Component {
 		showProject: 6,
 	}
 	componentDidMount() {
-		window.scrollTo({ top: 0, behavior: 'smooth' })
+		window.scrollTo({ top: 0 })
 	}
 
 	render() {
@@ -29,42 +29,9 @@ export class Projects extends Component {
 						<InputSelect name='sortby' label='Sort By' options={['Newest', 'Oldest']}></InputSelect>
 					</section>
 					<section className='Content'>
-						<ProjectCard
-							image={ProjectSatu}
-							title='Our Journey With Plant Story App'
-							tags='STUDY CASE #1'
-							article='/'
-						></ProjectCard>
-						<ProjectCard
-							image={ProjectSatu}
-							title='Our Journey With Plant Story App'
-							tags='STUDY CASE #1'
-							article='/'
-						></ProjectCard>
-						<ProjectCard
-							image={ProjectSatu}
-							title='Our Journey With Plant Story App'
-							tags='STUDY CASE #1'
-							article='/'
-						></ProjectCard>
-						<ProjectCard
-							image={ProjectSatu}
-							title='Our Journey With Plant Story App'
-							tags='STUDY CASE #1'
-							article='/'
-						></ProjectCard>
-						<ProjectCard
-							image={ProjectSatu}
-							title='Our Journey With Plant Story App'
-							tags='STUDY CASE #1'
-							article='/'
-						></ProjectCard>
-						<ProjectCard
-							image={ProjectSatu}
-							title='Our Journey With Plant Story App'
-							tags='STUDY CASE #1'
-							article='/'
-						></ProjectCard>
+						<p style={{ fontWeight: 'bold', marginBottom: '100px' }}>
+							Sorry, there is no project yet
+						</p>
 					</section>
 				</main>
 				<Footer showModal={this.props.showModal}></Footer>
